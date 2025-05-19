@@ -2,13 +2,13 @@
 WITH customer_tenure AS ( 
     SELECT 
         u.id AS customer_id,  -- Unique ID for each customer
-        u.name,               -- Customer's name
+        CONCAT(u.first_name, ' ', u.last_name) AS name,               -- Customer's name
         TIMESTAMPDIFF(MONTH, u.date_joined, CURDATE()) AS tenure_months  -- How long they've been with us, in months
     FROM 
         users_customuser AS u
 ),
 
--- Summarize transaction data and calculate total profit per customer
+-- Summarise transaction data and calculate total profit per customer
 customer_transactions AS (
     SELECT 
         s.owner_id AS customer_id,  -- Links transactions to the customer
