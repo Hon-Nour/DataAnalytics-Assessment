@@ -1,7 +1,7 @@
 -- Selecting user ID and name, along with key metrics
 SELECT
     u.id AS owner_id,  -- Unique ID of the user
-    u.name,            -- User's name
+    CONCAT(u.first_name, ' ', u.last_name) AS name,            -- User's name
 
     -- Counting how many savings plans each user has
     SUM(CASE WHEN p.is_regular_savings = 1 THEN 1 ELSE 0 END) AS savings_count,
