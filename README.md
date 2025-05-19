@@ -5,6 +5,11 @@ Personally, I think of SQL as like English: You just need to understand it. It h
 
 This project contains my solutions for the Cowrywise Data Analytics assessment, demonstrating my skills in data analysis, query optimisation, and problem-solving.
 
+### Challenges
+The first challenge I got was: " ERROR 1273 (HY000) at line 1: Unknown collation: 'utf8mb4_0900_ai_ci' " 
+This happened because my MySQL server version does not support the collation.
+I used a compatible collation for my MySQL version: utf8mb4_general_ci
+
 ### Question1
 For this problem, the goal was to list users who have both savings and investment plans, along with their total deposits. So, I started by asking myself a few questions:
 1. How do I make sure each user has at least one of each?
